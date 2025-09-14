@@ -10,10 +10,12 @@ import java.util.Scanner;
 public class Controller {
     final private Scanner scanner = new Scanner(System.in);
     final private User user = new User();
-    final private Squirtle squirtle = new Squirtle("Squirtle", 0);
-    final private Charmander charmander = new Charmander(null, 100);
+    final private Squirtle squirtle = new Squirtle("Squirtle", 0, user);
+    final private Charmander charmander = new Charmander(null, 100, user);
 
     public void run() {
+        Thread squirtleThread = new Thread(squirtle);
+        squirtleThread.start();
         while (true) {
             try {
                 printMain(
@@ -31,8 +33,8 @@ public class Controller {
 
     private void processUserInput() {
         String input = scanner.nextLine();
-        int sleepingSeconds = 0; // test
-//        int sleepingSeconds = 1500;
+//        int sleepingSeconds = 0; // test
+        int sleepingSeconds = 1500;
 
         switch (input) {
             case "1":
@@ -45,6 +47,7 @@ public class Controller {
                 break;
             case "3":
                 System.out.println("-> '몬스터 구매'를 선택했습니다.");
+                System.out.println("-> '개발 중인 기능입니다.");
                 break;
             case "0":
                 System.out.println("-> 게임을 종료합니다.");
