@@ -1,30 +1,23 @@
 package org.example.domain;
 
 public class User {
-    private int money;
+    private int point;
     private int monsterCount;
 
-    public synchronized void levelUp(Creature creature) {
-        int currentLevel = creature.getLevel();
-        if (currentLevel == creature.getMaxLevel()) {
-            // 에러 처리
-        }
-        creature.setLevel(currentLevel + 1);
+    public User() {
+        point = 0;
+        monsterCount = 0;
+    }
+    public synchronized int getPoint() {
+        return point;
     }
 
-    public synchronized void buyMonster(Creature creature) {
-        int price = creature.getPrice();
+    public synchronized void consumePoint(int point) {
+        this.point = this.point - point;
     }
 
-    public void quit() {
-        // 프로그램 종료
-    }
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
+    public synchronized void setPoint(int point) {
+        this.point = point;
     }
 
     public int getMonsterCount() {
