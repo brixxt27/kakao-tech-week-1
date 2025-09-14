@@ -47,7 +47,7 @@ public class Controller {
                 break;
             case "3":
                 System.out.println("-> '몬스터 구매'를 선택했습니다.");
-                System.out.println("-> '개발 중인 기능입니다.");
+                purchaseMonster();
                 break;
             case "0":
                 System.out.println("-> 게임을 종료합니다.");
@@ -61,6 +61,21 @@ public class Controller {
         } catch(InterruptedException e) {
             System.exit(1);
         }
+    }
+
+    private void purchaseMonster() {
+        if (user.getMonsterCount() == 2) {
+            System.out.println("-> 현재 구매 가능한 몬스터가 없습니다.");
+            return;
+        }
+        if (user.getPoint() < charmander.getPrice()) {
+            System.out.println("-> 가격은 100 포인트입니다. 잔액이 부족합니다.");
+            return;
+        }
+        charmander.setName("Charmander");
+        user.setMonsterCount(user.getMonsterCount() + 1);
+        Thread thread = new Thread(charmander);
+        thread.start();
     }
 
     private void printPoint() {
