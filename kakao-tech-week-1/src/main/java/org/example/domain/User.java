@@ -5,14 +5,14 @@ public class User {
     private int monsterCount;
 
     public User() {
-        point = 0;
+        point = 55;
         monsterCount = 0;
     }
     public synchronized int getPoint() {
         return point;
     }
 
-    public synchronized void consumePoint(int point) {
+    public synchronized void usePoint(int point) {
         this.point = this.point - point;
     }
 

@@ -17,7 +17,8 @@ public class Controller {
         while (true) {
             try {
                 printMain(
-                        squirtle.getName(), squirtle.getLevel(), charmander.getName(), charmander.getLevel()
+                        squirtle.getName(), squirtle.getLevel(),
+                        charmander.getName(), charmander.getLevel()
                 );
                 processUserInput();
             } catch (Exception e) {
@@ -87,17 +88,23 @@ public class Controller {
                     System.out.println("-> 잔액이 부족합니다.");
                     break;
                 }
-                user.consumePoint(pointAmountOfSquirtle);
+                user.usePoint(pointAmountOfSquirtle);
                 squirtle.levelUp();
                 System.out.println("-> 꼬부기 레벨 업!");
                 break;
-//            case "2":
-//                if (charmander.getName() != null) {
-//                    System.out.println("-> 파이리 레벨 업!");
-//                } else {
-//                    System.out.println("-> 잘못된 명령어입니다.");
-//                }
-//                break;
+            case "2":
+                if (charmander.getName() != null) {
+                    if (user.getPoint() < pointAmountOfCharmander) {
+                        System.out.println("-> 잔액이 부족합니다.");
+                        break;
+                    }
+                    user.usePoint(pointAmountOfCharmander);
+                    charmander.levelUp();
+                    System.out.println("-> 파이리 레벨 업!");
+                } else {
+                    System.out.println("-> 잘못된 명령어입니다.");
+                }
+                break;
             case "0":
                 System.out.println("-> 레벨 업을 취소합니다.");
                 break;
