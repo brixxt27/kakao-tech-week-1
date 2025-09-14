@@ -5,7 +5,7 @@ public class User {
     private int monsterCount;
 
     public User() {
-        point = 55;
+        point = 0;
         monsterCount = 0;
     }
     public synchronized int getPoint() {
@@ -13,11 +13,11 @@ public class User {
     }
 
     public synchronized void usePoint(int point) {
-        this.point = this.point - point;
+        this.point -= point;
     }
 
-    public synchronized void setPoint(int point) {
-        this.point = point;
+    public synchronized void increasePoint(int point) {
+        this.point += point;
     }
 
     public int getMonsterCount() {
