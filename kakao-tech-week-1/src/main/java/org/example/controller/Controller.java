@@ -30,6 +30,8 @@ public class Controller {
 
     private void processUserInput() {
         String input = scanner.nextLine();
+        int sleepingSeconds = 0; // test
+//        int sleepingSeconds = 1500;
 
         switch (input) {
             case "1":
@@ -51,7 +53,7 @@ public class Controller {
                 System.out.println("-> 잘못된 명령어입니다. 다시 입력해주세요.");
         }
         try {
-            Thread.sleep(2000);
+            Thread.sleep(sleepingSeconds);
         } catch(InterruptedException e) {
             System.exit(1);
         }
