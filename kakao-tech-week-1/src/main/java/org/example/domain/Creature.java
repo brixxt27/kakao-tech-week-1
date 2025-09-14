@@ -1,7 +1,7 @@
 package org.example.domain;
 
 public class Creature {
-    final private String name;
+    private String name;
     protected int level;
     final private int price;
 
@@ -29,5 +29,9 @@ public class Creature {
 
     public int getMaxLevel() {
         return 10;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
