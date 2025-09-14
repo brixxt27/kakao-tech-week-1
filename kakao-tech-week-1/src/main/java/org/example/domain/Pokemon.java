@@ -19,7 +19,7 @@ public class Pokemon extends Creature {
         return earningRate;
     }
 
-    public void earnMoney(/** User user */) {
+    public void earnMoney(/* User user */) {
         // User와 상호 작용해서 돈을 번다.
         // earningInterval 마다 earningRate * level * moneyPerSecond
         int money = this.earningRate * this.level * this.moneyPerSecond;
