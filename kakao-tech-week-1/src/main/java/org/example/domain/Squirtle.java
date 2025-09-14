@@ -12,4 +12,7 @@ public class Squirtle extends Pokemon {
         return pokemonType;
     }
 
+    public int getPointOfLevelUp() {
+        return 10;
+    }
 }

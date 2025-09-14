@@ -11,4 +11,8 @@ public class Charmander extends Pokemon{
     public PokemonType getPokemonType() {
         return pokemonType;
     }
+
+    public int getPointOfLevelUp() {
+        return 100;
+    }
 }
