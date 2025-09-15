@@ -8,6 +8,7 @@ public class Squirtle extends Pokemon implements Runnable {
         super(name, price);
         this.moneyPerSecond = 1;
         this.user = user;
+        user.setMonsterCount(user.getMonsterCount() + 1);
     }
 
     public PokemonType getPokemonType() {
